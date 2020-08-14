@@ -8,6 +8,7 @@ argue that learned features should therefore be optimized to be discriminative w
 
 ## Datasets
 The CVACT dataset can be accessed from: https://github.com/Liumouliu/OriCNN
+Please download both ACT_small and ACT_test and put them together to form the dataset we use.
 
 ## Models
 Models trained on CVACT can be find through the link: https://drive.google.com/drive/folders/1F520jxdU6zQIxGk0dM4ygDVGIWvNzq8Y?usp=sharing
@@ -15,3 +16,7 @@ Models trained on CVACT can be find through the link: https://drive.google.com/d
 If you want to train the model by yourself, you can initialize the graph with the model provides in the folder "Initialize". It is the same initialization in the released code of the baseline method: https://github.com/shiyujiao/cross_view_localization_SAFA, where the VGG part is pre-trained on the Imagenet, and other parts are initialized randomly.
 
 ## Codes
+For training and validation the proposed method, run: CVACT_training_and_validation_our_model.ipynb
+For training and validation the baseline, run: CVACT_training_and_validation_baseline.ipynb
+
+please first run the pre-processing strp provided by the baseline, https://github.com/shiyujiao/cross_view_localization_SAFA, to get the polar transformed satellite image.
