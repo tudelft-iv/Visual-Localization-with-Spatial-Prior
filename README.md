@@ -8,6 +8,16 @@ The link to our paper: https://link.springer.com/chapter/10.1007%2F978-3-030-660
 We revisit end-to-end representation learning for cross-view self-localization, the task of retrieving for a query camera image the closest satellite image in a database by matching them in a shared image representation space. Previous work tackles this task as a global localization problem, i.e. assuming no prior knowledge on the location, thus the learned image representation must distinguish far apart areas of the map. However, in many practical applications such as self-driving vehicles, it is already possible to discard distant locations through well-known localization techniques using temporal filters and GNSS/GPS sensors. We
 argue that learned features should therefore be optimized to be discriminative within the geographic local neighborhood, instead of globally. We propose a simple but effective adaptation to the common triplet loss used in previous work to consider a prior localization estimate already in the training phase. We evaluate our approach on the existing CVACT dataset, and on a novel localization benchmark based on the Oxford RobotCar dataset which tests generalization across multiple traversals and days in the same area. For the Oxford benchmarks we collected corresponding satellite images. With a localization prior, our approach improves recall@1 by 9 percent points on CVACT, and reduces the median localization error by 2.45 meters on the Oxford benchmark, compared to a state-of-the-art baseline approach. Qualitative results underscore that with our approach the network indeed captures different aspects of the local surroundings compared to the global baseline.
 
+![](images/ground_img.png)
+![](images/featuremap_ours.png)
+![](images/featuremap_baseline.png)
+
+Given an input image, our model extracts feature at geographical local discriminative objects, e.g. streetlights and vegetations, while the baseline mostly focuses on the road structure, which is globally distinct, but locally ambiguous.
+
+<img src="images/CVACT_100mheatmap_ours.png" width="200"> <img src="images/CVACT_100mheatmap_baseline.png" width="200">
+
+Consequently, our model is more discriminative in local areas. In the above localization heat maps, each dot represents a satellite image, and the ground truth location is indicated by the cross. Darker colors indicate smaller embedding distance between the satellite images at those locations and the ground query taken at the center location. Inside a local neighborhood with a 100m radius, our approach results in a single peak (left), while the baseline distribution is more spread (right).
+
 
 ## Datasets
 The CVACT dataset can be accessed from: https://github.com/Liumouliu/OriCNN
@@ -26,6 +36,7 @@ please first run the pre-processing strp provided by the baseline, https://githu
 
 ## Notes
 if you use this code in your research, please cite our paper:
+
 @InProceedings{10.1007/978-3-030-66096-3_38,
 author="Xia, Zimin
 and Booij, Olaf
