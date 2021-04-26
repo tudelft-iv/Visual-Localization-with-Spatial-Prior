@@ -1,5 +1,14 @@
 # Visual-Localization-with-Spatial-Prior
 
+## We will release the code of our follow-up work "Cross-View Matching for Vehicle Localization by Learning Geographically Local Representations" here.
+
+### We also release our collected satellite images to support the cross-view matching research on the Oxford RobotCar dataset(https://robotcar-dataset.robots.ox.ac.uk/)
+## The link to our collected satellite images:
+### The overview of the traversals we use:
+
+
+---------------------------------------------------
+
 This repository contains codes for "Geographically Local Representation Learningwith a Spatial Prior for Visual Localization", ECCV Map-based Localization for Autonomous Driving Workshop 2020
 
 The link to our paper: https://link.springer.com/chapter/10.1007%2F978-3-030-66096-3_38
@@ -19,7 +28,7 @@ Given an input image, our model extracts feature at geographical local discrimin
 Consequently, our model is more discriminative in local areas. In the above localization heat maps, each dot represents a satellite image, and the ground truth location is indicated by the cross. Darker colors indicate smaller embedding distance between the satellite images at those locations and the ground query taken at the center location. Inside a local neighborhood with a 100m radius, our approach results in a single peak (left), while the baseline distribution is more spread (right).
 
 
-## Datasets
+## CVACT Datasets
 The CVACT dataset can be accessed from: https://github.com/Liumouliu/OriCNN
 Please download both ACT_small and ACT_test and put them together to form the dataset we use.
 
