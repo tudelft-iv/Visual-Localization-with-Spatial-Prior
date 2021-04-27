@@ -3,7 +3,7 @@
 ## We will release the code of our follow-up work "Cross-View Matching for Vehicle Localization by Learning Geographically Local Representations" here.
 
 ### We also release our collected satellite images to support the cross-view matching research on the Oxford RobotCar dataset(https://robotcar-dataset.robots.ox.ac.uk/)
-## The link to our collected satellite images: will be provided on 2021-04-27
+## The link to our collected satellite images: https://surfdrive.surf.nl/files/index.php/s/kF4NlGOeQT1sIpV
 ### The overview of the traversals we use:
 ![](images/overview_traversals.PNG)
 
