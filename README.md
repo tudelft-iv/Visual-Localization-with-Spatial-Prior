@@ -1,7 +1,7 @@
 # Visual-Localization-with-Spatial-Prior
 
-### This repository contains code for
-#### "Geographically Local Representation Learningwith a Spatial Prior for Visual Localization", ECCV Map-based Localization for Autonomous Driving Workshop 2020
+### This repository contains code used in
+#### "Geographically Local Representation Learning with a Spatial Prior for Visual Localization", ECCV Map-based Localization for Autonomous Driving Workshop 2020
 https://link.springer.com/chapter/10.1007%2F978-3-030-66096-3_38
 #### "Cross-View Matching for Vehicle Localization by Learning Geographically Local Representations" IEEE Robotics and Automation Letters, 2021
 https://ieeexplore.ieee.org/abstract/document/9449965
@@ -36,9 +36,8 @@ The overview of the traversals we use:
 
 
 ## Models
-Models trained on CVACT can be find through the link: https://drive.google.com/drive/folders/1F520jxdU6zQIxGk0dM4ygDVGIWvNzq8Y?usp=sharing
+Models used in the ECCVw and RAL paper can be find through the link: https://drive.google.com/drive/folders/1c65BThElwZAN0Pqzdqfn8jJ11LcD8Hse?usp=sharing
 
-If you want to train the model by yourself, you can initialize the graph with the model provides in the folder "Initialize". It is the same initialization in the released code of the baseline method: https://github.com/shiyujiao/cross_view_localization_SAFA, where the VGG part is pre-trained on the Imagenet, and other parts are initialized randomly.
 
 ## Codes
 For training and validation the proposed method, run: CVACT_training_and_validation_our_model.ipynb
