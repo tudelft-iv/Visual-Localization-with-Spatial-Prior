@@ -66,6 +66,9 @@ class InputData:
         
         self.testList = testlist
         self.testNum = len(testlist)
+        self.testNum_tr1 = len(testlist1)
+        self.testNum_tr2 = len(testlist2)
+        self.testNum_tr3 = len(testlist3)
         testarray = np.array(testlist)
         self.testUTM = np.transpose(testarray[:,2:].astype(np.float64))
         
@@ -82,6 +85,9 @@ class InputData:
         print('number of ground images in training set', self.trainNum)    
         print('number of ground images in validation set', self.valNum) 
         print('number of ground images in test set', self.testNum)
+        print('number of ground images in test traversal 1', self.testNum_tr1)
+        print('number of ground images in test traversal 2', self.testNum_tr2)
+        print('number of ground images in test traversal 3', self.testNum_tr3)
 
         print('Storing the index of nearby images for all satellite images. This might take a while')
         UTM_transposed = np.transpose(self.fullUTM)

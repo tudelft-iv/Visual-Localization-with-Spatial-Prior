@@ -2,11 +2,11 @@ import numpy as np
 import tensorflow as tf
 import tensorflow_probability as tfp
 
-def validate(dist_array, top_k, input_data):
+def validate(dist_array, top_k, input_data, index_offset=0):
     accuracy = 0.0
     data_amount = 0.0
     for i in range(dist_array.shape[1]):
-        gt_indexes = input_data.neighbor_gt_val[str(i)]
+        gt_indexes = input_data.neighbor_gt_val[str(i+index_offset)]
         gt_dist = np.min(dist_array[gt_indexes, i])
         prediction = np.sum(dist_array[:, i] < gt_dist)
         if prediction < top_k:
@@ -18,12 +18,12 @@ def validate(dist_array, top_k, input_data):
     return accuracy
 
 
-def validate_local(dist_array, top_k, input_data):
+def validate_local(dist_array, top_k, input_data, index_offset=0):
     accuracy = 0.0
     data_amount = 0.0
     for i in range(dist_array.shape[1]):
-        nearby_indexes = input_data.neighbor_negative_samples_val[str(i)]
-        gt_indexes = input_data.neighbor_gt_val[str(i)]
+        nearby_indexes = input_data.neighbor_negative_samples_val[str(i+index_offset)]
+        gt_indexes = input_data.neighbor_gt_val[str(i+index_offset)]
         gt_dist = np.min(dist_array[gt_indexes, i])
         list_withincircle = [dist_array[j, i] for j in nearby_indexes]
         prediction = np.sum(list_withincircle<gt_dist)
