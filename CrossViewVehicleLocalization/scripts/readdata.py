@@ -13,8 +13,8 @@ class InputData:
         self.gt_radius = 5 
         self.gt_radius_val = 5
         self.sig = 10
-        self.image_root = '/local/zxia/datasets/Oxford_5m_sampling/' # replace this with the path to the dataset
-        self.datasplit_root = '/local/zxia/experiments/Visual-Localization-with-Spatial-Prior/CrossViewVehicleLocalization/datasplits/' # replace this with the path to the datasplit files
+        self.image_root = './Oxford_5m_sampling/' # replace this with the path to the dataset
+        self.datasplit_root = './CrossViewVehicleLocalization/datasplits/' # replace this with the path to the datasplit files
         
         # load the training, validation, and test set
         trainlist = []
