@@ -33,6 +33,7 @@ Please download both ACT_small and ACT_test and put them together to form the da
 
 ### Oxford RobotCar Dataset
 We collected satellite images for [Oxford RobotCar dataset](https://robotcar-dataset.robots.ox.ac.uk/). The link to our collected satellite images: https://surfdrive.surf.nl/files/index.php/s/kF4NlGOeQT1sIpV.
+We release the images in accordance with the ``fair use'' policy in [Google Maps/Google Earth Terms of Service](https://www.google.com/help/terms_maps/), version: Jan 12, 2022. The released data is for the reproducibility of scientific research and cannot be used for commercial purposes. Google remains the copyright of images.
 
 The overview of the traversals we use:
 ![](images/overview_traversals.PNG)
