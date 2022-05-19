@@ -13,8 +13,8 @@ class InputData:
         self.gt_radius = 5 
         self.gt_radius_val = 5
         self.sig = 10
-        self.image_root = './Oxford_5m_sampling/' # replace this with the path to the dataset
-        self.datasplit_root = './CrossViewVehicleLocalization/datasplits/' # replace this with the path to the datasplit files
+        self.image_root = '/scratch/zxia/datasets/Oxford_5m_sampling/' # replace this with the path to the dataset
+        self.datasplit_root = '/scratch/zxia/experiments/Visual-Localization-with-Spatial-Prior/CrossViewVehicleLocalization/datasplits/' # replace this with the path to the datasplit files
         
         # load the training, validation, and test set
         trainlist = []
@@ -93,6 +93,7 @@ class InputData:
         UTM_transposed = np.transpose(self.fullUTM)
         UTMTree = KDTree(UTM_transposed)
         
+        self.nearest_neighbor = {}
         self.neighbor_gt_train = {} # store the index of positive samples
         self.neighbor_gt_val = {}
         self.neighbor_negative_samples_train = {} # store the index of nearby negative samples 
@@ -103,6 +104,7 @@ class InputData:
             self.neighbor_gt_train.update({str(i):idx_gt_train})
             
             candidates = UTMTree.query_ball_point(center_UTM,r=self.radius, p=2)
+            self.nearest_neighbor.update({str(i):candidates})
             
             idx_negative_samples_train = [x for x in candidates if x not in idx_gt_train]
             self.neighbor_negative_samples_train.update({str(i):idx_negative_samples_train})
